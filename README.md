@@ -2,8 +2,19 @@
 
 Swagger UI using ReDoc that is easy to use.
 
+# Page
+
+**Screenshot image here**
+
+https://redshoga.github.io/simplest-redoc/index.html
+
 # How to use
 
+Only Access `https://redshoga.github.io/simplest-redoc/?http://your-hosting.com/v2/swagger.json`
+
+Instagram Sample
+
+[https://redshoga.github.io/simplest-redoc/?https://api.apis.guru/v2/specs/instagram.com/1.0.0/swagger.yaml](https://redshoga.github.io/simplest-redoc/?https://api.apis.guru/v2/specs/instagram.com/1.0.0/swagger.yaml)
 
 # Whats's is ReDoc
 

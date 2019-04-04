@@ -13,13 +13,53 @@
     </style>
   </head>
   <body>
+    <div id="intro" style="padding: 1em;">
+      <header>
+        <h1>Simplest ReDoc</h1>
+        <p>Swagger UI using ReDoc that is easy to use.</p>
+      </header>
+      
+      <main style="margin-bottom: 2em;">
+        Input Swagger file URL here<br>
+        <input size=40 type="text" id="swagger-url" value="http://petstore.swagger.io/v2/swagger.json" />
+        <button id="jump-button">Jump</button>
+      </main>
+
+      <footer>
+        <a href="https://github.com/redshoga/simplest-redoc">GitHub Link</a>
+      </footer>
+    </div>
+
     <script>
-      var swaggerUrl = location.search.slice(1);
-      var template = "<redoc spec-url='" + swaggerUrl + "'></redoc>";
-      document.write(template);
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js';
-      document.body.appendChild(script);
+      (function() {
+        // Button event
+        document.getElementById("jump-button").onclick = function() {
+          var swaggerUrl = document.getElementById("swagger-url").value;
+          location.href = location.href.split("?")[0] + "?" + swaggerUrl;
+        }
+
+        // Get url
+        var swaggerUrl = location.search.slice(1);
+        var regex = new RegExp("^(http[s]?:\\/\\/(www\\.)?|ftp:\\/\\/(www\\.)?|www\\.){1}([0-9A-Za-z-\\.@:%_\+~#=]+)+((\\.[a-zA-Z]{2,3})+)(/(.)*)?(\\?(.)*)?");
+        if (!regex.test(swaggerUrl) && swaggerUrl.length !== 0) {
+          alert("Swagger URL is not valid");
+          return;
+        }
+        if (swaggerUrl.length === 0) {
+          return;
+        }
+
+        // Delete introduction element
+        var deleteElement = document.getElementById("intro");
+        document.body.removeChild(deleteElement);
+
+        // Add ReDoc element
+        var template = "<redoc spec-url='" + swaggerUrl + "'></redoc>";
+        document.write(template);
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js';
+        document.body.appendChild(script);
+      })();
     </script>
   </body>
 </html>
