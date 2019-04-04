@@ -4,7 +4,7 @@ Swagger UI using ReDoc that is easy to use.
 
 # Page
 
-**Screenshot image here**
+![demo image](https://raw.githubusercontent.com/redshoga/simplest-redoc/image/demo.gif)
 
 https://redshoga.github.io/simplest-redoc/index.html
 
