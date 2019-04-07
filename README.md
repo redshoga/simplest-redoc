@@ -12,7 +12,7 @@ https://redshoga.github.io/simplest-redoc/index.html
 
 Only Access `https://redshoga.github.io/simplest-redoc/?http://your-hosting.com/v2/swagger.json`
 
-Please do not put CORS restrictions.
+Please use swagger file provided by https
 
 Instagram Sample
 
